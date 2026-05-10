@@ -68,7 +68,9 @@ export default function RootLayout({
       lang="en"
       className={`${orbitron.variable} ${spaceMono.variable} ${bebasNeue.variable}`}
     >
-      <body className="font-mono antialiased">{children}</body>
+      <body className="font-mono antialiased min-h-screen flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }

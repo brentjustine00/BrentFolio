@@ -6,7 +6,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="mt-20 pt-16 pb-24 md:mt-0 md:pb-6 relative z-50" role="contentinfo">
+    <footer className="mt-40 pt-16 pb-24 md:mt-0 md:pb-6 relative z-50" role="contentinfo">
       {/* Back to top */}
       <div className="flex justify-center mb-8">
         <button

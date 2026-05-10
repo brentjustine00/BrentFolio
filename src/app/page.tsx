@@ -194,7 +194,7 @@ export default function Home() {
       <Navbar />
 
       {/* Main Content */}
-      <main id="main">
+      <main id="main" className="flex-1">
         <Hero />
         <About />
         <Experience />
