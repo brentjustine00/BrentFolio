@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b6ff3b"/>
+      <stop offset="1" stop-color="#46ffb6"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="#050608"/>
+  <rect x="32" y="32" width="448" height="448" rx="96" fill="none" stroke="url(#g)" stroke-width="10" opacity="0.9"/>
+
+  <g opacity="0.12">
+    <rect x="56" y="120" width="400" height="10" fill="#ffffff"/>
+    <rect x="56" y="232" width="400" height="10" fill="#ffffff"/>
+    <rect x="56" y="344" width="400" height="10" fill="#ffffff"/>
+  </g>
+
+  <!-- terminal prompt mark: ">_" -->
+  <g filter="url(#glow)" fill="none" stroke="url(#g)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M156 180 L256 256 L156 332" stroke-width="26"/>
+    <path d="M272 332 H360" stroke-width="22"/>
+  </g>
+
+  <g stroke="url(#g)" stroke-width="6" stroke-linecap="round" opacity="0.85">
+    <path d="M96 120h40" />
+    <path d="M96 120v40" />
+    <path d="M416 120h-40" />
+    <path d="M416 120v40" />
+    <path d="M96 392h40" />
+    <path d="M96 392v-40" />
+    <path d="M416 392h-40" />
+    <path d="M416 392v-40" />
+  </g>
+</svg>
