@@ -13,13 +13,13 @@ const CONTACT_LINKS = [
   },
   {
     label: "GITHUB",
-    value: "github.com/brent",
+    value: "github.com/",
     action: "VISIT →",
     href: "https://github.com/brentjustine00",
   },
   {
     label: "LINKEDIN",
-    value: "linkedin.com/in/brent",
+    value: "linkedin.com/",
     action: "VISIT →",
     href: "https://www.linkedin.com/in/brent-justine-barbadillo-350668383/",
   },
@@ -80,7 +80,7 @@ export default function Contact() {
     >
       <div className="section-label">[06] — CONTACT.INIT</div>
 
-      <ScrollReveal variant="fadeUp">
+      <ScrollReveal variant="fadeUp" className="sr-low">
         <div className="text-center mb-12">
           <h2
             id="contact-heading"
@@ -99,7 +99,7 @@ export default function Contact() {
       </ScrollReveal>
 
       {/* Contact Links */}
-      <ScrollReveal variant="fadeUp" delay={150}>
+      <ScrollReveal variant="fadeUp" delay={60} className="sr-low">
         <div className="max-w-2xl mx-auto space-y-2 mb-16">
           {CONTACT_LINKS.map((link) => (
             <div key={link.label} className="contact-row">
@@ -140,7 +140,7 @@ export default function Contact() {
       </ScrollReveal>
 
       {/* Terminal Form */}
-      <ScrollReveal variant="fadeUp" delay={300}>
+      <ScrollReveal variant="fadeUp" delay={120} className="sr-low">
         <div className="max-w-2xl mx-auto terminal-card">
           <div className="terminal-dots">
             <span />

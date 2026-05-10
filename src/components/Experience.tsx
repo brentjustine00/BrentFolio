@@ -3,8 +3,8 @@ import ScrollReveal from "./ui/ScrollReveal";
 const EXPERIENCES = [
   {
     company: "CSR",
-    role: "Customer Support Representative",
-    date: "March 2026 — Present",
+    role: "Customer Support Representative - NEXTVAs INC.",
+    date: "Feb 2026 — Present",
     tasks: [
       "Manage inbound calls, emails, and chats to provide exceptional customer support",
       "Troubleshoot technical issues and guide users through product solutions",
@@ -14,7 +14,7 @@ const EXPERIENCES = [
   },
   {
     company: "DATA ENCODER",
-    role: "Data Encoder(SPES)",
+    role: "Data Encoder(SPES)- Municipal of Bay",
     date: "Aug 2022 - Dec 2022",
     tasks: [
       "Digitally encoded large volumes of handwritten and scanned documents with high accuracy",
@@ -45,7 +45,12 @@ export default function Experience() {
         <div className="absolute left-0 top-0 bottom-0 w-px bg-dark-border hidden lg:block" />
 
         {EXPERIENCES.map((exp, i) => (
-          <ScrollReveal key={exp.company} variant="fadeUp" delay={i * 150}>
+          <ScrollReveal
+            key={exp.company}
+            variant="fadeUp"
+            delay={i * 60}
+            className="sr-low"
+          >
             <div className="terminal-card lg:ml-8 transition-all duration-300">
               {/* Terminal dots */}
               <div className="terminal-dots items-center">

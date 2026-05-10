@@ -11,17 +11,9 @@ interface ScrollRevealProps {
   className?: string;
 }
 
-const variantClassMap: Record<Variant, string> = {
-  fadeUp: "sr-visible-fade-up",
-  fadeLeft: "sr-visible-fade-left",
-  fadeRight: "sr-visible-fade-right",
-  scaleIn: "sr-visible-scale-in",
-  flipUp: "sr-visible-flip-up",
-};
-
 export default function ScrollReveal({
   children,
-  variant = "fadeUp",
+  variant: _variant,
   delay = 0,
   className = "",
 }: ScrollRevealProps) {
@@ -36,7 +28,7 @@ export default function ScrollReveal({
         if (entry.isIntersecting) {
           setTimeout(() => {
             el.classList.remove("sr-hidden");
-            el.classList.add(variantClassMap[variant]);
+            el.classList.add("sr-visible");
           }, delay);
           observer.unobserve(el);
         }
@@ -47,7 +39,7 @@ export default function ScrollReveal({
     observer.observe(el);
 
     return () => observer.disconnect();
-  }, [variant, delay]);
+  }, [delay]);
 
   return (
     <div ref={ref} className={`sr-hidden ${className}`}>

@@ -47,7 +47,7 @@ export default function About() {
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center">
         {/* Left — 60% */}
-        <ScrollReveal variant="fadeLeft" className="lg:col-span-3">
+        <ScrollReveal variant="fadeLeft" className="lg:col-span-3 sr-low">
           <h2
             id="about-heading"
             className="font-orbitron text-3xl md:text-5xl font-bold text-white leading-tight mb-8"
@@ -92,7 +92,7 @@ export default function About() {
         {/* Right — Profile picture + geometric frame */}
         <ScrollReveal
           variant="fadeRight"
-          className="lg:col-span-2 hidden md:flex flex-col items-center"
+          className="lg:col-span-2 hidden md:flex flex-col items-center sr-low"
         >
           <div className="relative">
             {/* Rotating dashed border */}

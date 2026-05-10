@@ -9,8 +9,8 @@ const PROJECTS = [
     num: "01",
     name: "TechSaaS",
     category: "SaaS / Web App",
-    desc: "A full-featured SaaS platform built for conversions with high attention to detail.",
-    tech: ["React", "Next.js", "TypeScript"],
+    desc: "Built with Next.js + React for fast navigation, SEO-friendly Verceling, and a component system that scales. Optimized interactions/animation to stay smooth, and structured the page for conversion (clear CTA hierarchy, scannable sections, minimal friction).",
+    tech: ["Next.js", "React", "TypeScript", "FastAPI", "Vercel"],
     href: "https://veltrix-zeta-ten.vercel.app/",
     accent: "lime",
     image: "/images/project-plane.png",
@@ -19,8 +19,8 @@ const PROJECTS = [
     num: "02",
     name: "Restaurant",
     category: "Web / Branding",
-    desc: "A rich, immersive restaurant website with menu animations, online reservations, and brand identity.",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    desc: "Next.js + React to keep the UX snappy while staying SEO-friendly for discovery. Motion is tuned to feel premium without hurting performance, and the layout is designed for conversions (menu clarity, reservation-first flow, strong visual hierarchy).",
+    tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Vercel"],
     href: "https://aether-mu-eight.vercel.app/",
     accent: "magenta",
     image: "/images/project-saas.png",
@@ -29,8 +29,8 @@ const PROJECTS = [
     num: "03",
     name: "Plane Charter",
     category: "Landing Page / UI",
-    desc: "A sleek, conversion-focused landing page for a flight/travel product with cinematic scroll animations.",
-    tech: ["React", "GSAP", "CSS Animations"],
+    desc: "Next.js + React for fast page loads and reusable UI blocks while iterating on the funnel. Scroll animations are implemented with a performance-first mindset, and the page structure is built to convert (tight messaging, CTA placement, reduced distraction).",
+    tech: ["Next.js", "React", "GSAP", "CSS Animations", "Vercel"],
     href: "https://volterra-jet.vercel.app/",
     accent: "ice",
     image: "/images/project-restaurant.png",
@@ -207,23 +207,27 @@ export default function Projects() {
         <span className="text-chrome/50">LIVE IN PRODUCTION</span>
       </h2>
       <p className="font-mono text-sm text-chrome/40 mb-16">
-        {">"} showcasing deployed & production-ready work
+        {">"} showcasing deployed work + the engineering decisions behind it
       </p>
 
       {/* Asymmetric Magazine Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <ScrollReveal variant="fadeUp" className="md:row-span-2">
+        <ScrollReveal variant="fadeUp" className="md:row-span-2 sr-medium">
           <ProjectCard
             project={PROJECTS[0]}
             className="h-full min-h-[400px] flex flex-col"
           />
         </ScrollReveal>
 
-        <ScrollReveal variant="fadeUp" delay={150}>
+        <ScrollReveal variant="fadeUp" delay={60} className="sr-medium">
           <ProjectCard project={PROJECTS[1]} className="flex flex-col" />
         </ScrollReveal>
 
-        <ScrollReveal variant="fadeUp" delay={300} className="md:col-span-1">
+        <ScrollReveal
+          variant="fadeUp"
+          delay={120}
+          className="md:col-span-1 sr-medium"
+        >
           <ProjectCard project={PROJECTS[2]} className="flex flex-col" />
         </ScrollReveal>
       </div>

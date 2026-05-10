@@ -15,9 +15,17 @@ interface Folder {
 
 const FOLDERS: Folder[] = [
   {
+    name: "Backend",
+    skills: [
+      { name: "Flask", level: 7 },
+      { name: "FastAPI", level: 9},
+    ],
+  },
+  {
     name: "FRONTEND",
     skills: [
       { name: "React", level: 9 },
+      { name: "FastAPI", level: 9},
       { name: "Next.js", level: 8 },
       { name: "TypeScript", level: 8 },
       { name: "Tailwind CSS", level: 9 },
@@ -32,13 +40,16 @@ const FOLDERS: Folder[] = [
       { name: "Figma", level: 7 },
       { name: "VS Code", level: 9 },
       { name: "Vercel", level: 8 },
+      { name: "Render", level: 9},
+      { name: "Supabase", level: 9}
     ],
   },
   {
     name: "LEARNING",
     skills: [
       { name: "Node.js", level: 5 },
-      { name: "PostgreSQL", level: 4 },
+      { name: "Vue", level: 4 },
+      { name: "Angular", level: 5 }
     ],
   },
 ];
@@ -50,12 +61,14 @@ const ASCII_DEV = `
 ██║  ██║
 ██████╔╝
 ╚═════╝ 
+
 ███████╗
 ██╔════╝
 █████╗  
 ██╔══╝  
 ███████╗
 ╚══════╝
+
 ██╗   ██╗
 ██║   ██║
 ██║   ██║

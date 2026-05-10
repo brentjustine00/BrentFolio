@@ -32,7 +32,12 @@ export default function Education() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {EDUCATION.map((edu, i) => (
-          <ScrollReveal key={edu.school} variant="flipUp" delay={i * 150}>
+          <ScrollReveal
+            key={edu.school}
+            variant="flipUp"
+            delay={i * 60}
+            className="sr-low"
+          >
             <article className="floppy-card">
               <div
                 className={`h-1.5 ${edu.color === "lime" ? "bg-lime" : "bg-magenta"

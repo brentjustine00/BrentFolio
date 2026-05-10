@@ -450,26 +450,40 @@ body {
    ═══════════════════════════════════════════ */
 .sr-hidden {
   opacity: 0;
+  transform: translateY(60px) scale(0.92) rotateX(14deg);
+  filter: blur(10px);
+  transform-origin: center;
+  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity, filter;
 }
 
-.sr-visible-fade-up {
-  animation: cinematic-up 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+.sr-low {
+  transform: translateY(30px) scale(0.97) rotateX(6deg);
+  filter: blur(6px);
 }
 
-.sr-visible-fade-left {
-  animation: cinematic-left 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+.sr-medium {
+  transform: translateY(50px) scale(0.94) rotateX(10deg);
+  filter: blur(8px);
 }
 
-.sr-visible-fade-right {
-  animation: cinematic-right 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+.sr-high {
+  transform: translateY(80px) scale(0.9) rotateX(16deg);
+  filter: blur(12px);
 }
 
-.sr-visible-scale-in {
-  animation: blur-reveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+.sr-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotateX(0deg);
+  filter: blur(0);
+  transition:
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.9s ease,
+    filter 0.9s ease;
 }
 
-.sr-visible-flip-up {
-  animation: cinematic-up 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+.sr-visible:hover {
+  transform: translateY(-4px) scale(1.01) rotateX(2deg);
 }
 
 /* ═══════════════════════════════════════════
@@ -898,10 +912,10 @@ body {
    ASCII ART PANEL
    ═══════════════════════════════════════════ */
 .ascii-art {
-  color: var(--dark-border);
+  color: #d6fff7;
   font-size: 10px;
   line-height: 1.1;
   white-space: pre;
   user-select: none;
-  opacity: 0.4;
+  opacity: 0.5;
 }

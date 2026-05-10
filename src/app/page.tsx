@@ -19,8 +19,14 @@ function BootScreen({ onDone }: { onDone: () => void }) {
   const [lines, setLines] = useState<string[]>([]);
   const [barWidth, setBarWidth] = useState(0);
   const [fading, setFading] = useState(false);
+  const startedRef = useRef(false);
 
   useEffect(() => {
+    // Prevent duplicate boot sequence in React Strict Mode (dev)
+    if (startedRef.current) return;
+    startedRef.current = true;
+
+    const timeouts: Array<ReturnType<typeof setTimeout>> = [];
     const bootLines = [
       "BOOTING PORTFOLIO_OS...",
       "LOADING ASSETS [████████] 100%",
@@ -32,12 +38,14 @@ function BootScreen({ onDone }: { onDone: () => void }) {
       if (lineIndex < bootLines.length) {
         setLines((prev) => [...prev, bootLines[lineIndex]]);
         lineIndex++;
-        setTimeout(addLine, 400);
+        timeouts.push(setTimeout(addLine, 400));
       } else {
-        setTimeout(() => {
-          setFading(true);
-          setTimeout(onDone, 500);
-        }, 300);
+        timeouts.push(
+          setTimeout(() => {
+            setFading(true);
+            timeouts.push(setTimeout(onDone, 500));
+          }, 300)
+        );
       }
     };
 
@@ -49,9 +57,12 @@ function BootScreen({ onDone }: { onDone: () => void }) {
       if (progress >= 100) clearInterval(barInterval);
     }, 50);
 
-    setTimeout(addLine, 200);
+    timeouts.push(setTimeout(addLine, 200));
 
-    return () => clearInterval(barInterval);
+    return () => {
+      clearInterval(barInterval);
+      timeouts.forEach(clearTimeout);
+    };
   }, [onDone]);
 
   return (
