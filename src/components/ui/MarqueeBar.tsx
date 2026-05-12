@@ -9,7 +9,7 @@ export default function MarqueeBar({
   reverse = false,
   className = "",
 }: MarqueeBarProps) {
-  const repeated = `${text} `.repeat(12);
+  const repeated = `${text} `.repeat(3);
 
   return (
     <div
